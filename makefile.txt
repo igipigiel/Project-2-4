@@ -1,0 +1,16 @@
+start: ./a.out
+main.o: main.cpp event.h date. h schedule.h test.h
+	g++ main.cpp -std=c++11 -c -o main.o
+test.o: test.h test.cpp
+	g++ test.cpp -std=c++11 -c -o test.o
+date.o: date.h date.cpp
+	g++ date.cpp -std=c++11 -c -o date.o
+date.o: event.h event.cpp
+	g++ event.cpp -std=c++11 -c -o event.o
+date.o: schedule.h schedule.cpp
+	g++ schedule.cpp -std=c++11 -c -o schedule.o
+a.out : main.o testy.o metody.o
+	g++ main.o test.o date.o event.o schedule.o -std=c++11 -o a.out
+	./a.out
+clean:
+rm -f *.out *.o
